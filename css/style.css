@@ -1,0 +1,187 @@
+/* Custom properties */
+:root{
+    --light-color: #fff;
+    --light-color-alt: #afb6cd;
+    --primary-background-color: #131417;
+    --button-background-color: #202227;
+    --secondary-background-color: #252830;
+    --hover-light-color: var(--light-color);
+    --hover-dark-color: var(--primary-background-color);
+    --gradient-color: linear-gradient(
+        115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+    --myShadow: 0 1px 5px 0 rgba(179, 179, 179, 0.884),0 10px 10px 0 rgba(0,0,0,0.19);
+    --transparent-light-color: rgba(255,255,255,.05);
+    --transparent-dark-color: rgba(0,0,0,.75);
+    --font-family: 'Poppins', sans-serif;
+    --font-size-xsm: 1.2rem;
+    --font-size-sm: 1.6rem;
+    --font-size-md: 2.4rem;
+    --font-size-lg: 3rem;
+    --font-size-xl: 4rem;
+    --gap: 1rem;
+    --margin-sm: 2rem;
+    --margin-md: 3rem;
+    --item-min-height-sm: 20rem;
+    --item-min-height-md: 30rem;
+}
+
+@font-face {
+    font-family: "myFirstFont";
+    src: url("../fonts/myfont.ttf");
+}
+
+/* For body */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 100%;
+}
+body {
+    font-family: "myFirstFont";
+    background-color: var(--primary-background-color);
+}
+p {
+    text-align: center;
+    color: var(--light-color-alt);
+    font-family: "Poppins";
+    
+}
+
+/* The navBanners main style */
+.header_section {
+    font-family: "myFirstFont";
+    background-color: var(--primary-background-color);
+    color: var(--light-color);
+    padding: 1%;
+    text-align: center;
+}
+/* The navBanners title/header text */
+.specialH1{
+    font-family: "myFirstFont";
+    font-size: var(--font-size-xl);
+}  
+/* The navBanners main div */
+.navbar_main_div{
+    position: center;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    background-color:var(--primary-background-color);
+}
+/* center theses items */
+.place-items-center{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container for the navbar, with visible border */
+.navbar_container{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border:2px solid var(--light-color-alt); 
+}
+/* Glow/shadow round container */
+.boxShadow{
+    border-radius:5px;
+    box-shadow: var(--myShadow);
+}
+/* Removing the list dots in the nav */
+ul {
+    list-style: none;
+    align-items: center;
+}
+/* Navbar buttons */
+.nav_button{
+    font-family: "myFirstFont";
+    border-color: black;
+    border-radius: 2px;
+    padding: 2px;
+    background-color: var(--button-background-color);
+    border: 4px solid var(--secondary-background-color);
+}
+/* */
+.navbar_main_div > .list{   
+    flex-direction: row;
+}
+/* */
+.list{
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+}
+/* Color for the nav bar items */
+a{
+    color: var(--light-color);
+}
+a:visited{
+  color: var(--light-color-alt);
+}
+/* */
+.aref{
+    font-size: var(--font-size-xsm);
+    text-decoration: none;
+}
+/* */
+
+.programming{
+    margin: 10px;
+    background-color:var(--primary-background-color);
+    width: 100%;
+    align-items: center;
+    height: 500px;
+}
+/*Page headers*/
+.pageHeader {
+    font-size: var(--font-size-sm);
+}
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+
+/* Footer style */
+.footer{
+    color: var(--light-color);
+    font-size: var(--font-size-sm);
+    text-align: center;
+    padding: 5px;
+}
+/* */
+.row {
+    
+    display: flex;
+    flex-direction: row;
+
+}
+  
+.col {
+    flex-direction: column;
+    flex: 1;
+    padding:5px;
+    text-align: center;
+    object-fit:scale-down;
+  }
+/*Mobile stuff Shrink/stack to make space when width is lower than..*/
+@media only screen and (max-width: 800px) {
+    .navbar_main_div > .list{
+        display: block; 
+    }
+    .list {
+        display: block;  
+    }
+    .list-i{
+        margin: 10px;
+    }
+    .row {
+        display: block;
+    }
+} 
