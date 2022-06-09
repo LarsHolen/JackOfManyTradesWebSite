@@ -8,6 +8,7 @@
                     <li class="list-i">
                         <button class="nav_button boxShadow">
                             <a class="aref" href="../index.php">&nbsp;&nbsp;Programming&nbsp;&nbsp;</a>
+                            
                         </button>
                     </li>
                     <li class="list-i">
@@ -35,7 +36,6 @@
                             <a class="aref" href="../pages/contact.php">&nbsp;&nbsp;Contact form&nbsp;&nbsp;</a>
                         </button> 
                     </li>
-                    
                 </ul>
             </div>
         </nav>

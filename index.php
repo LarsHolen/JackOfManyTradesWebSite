@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
      <!-- Metadata -->
@@ -20,9 +21,18 @@
 
 
     <body>
+        
+        
+
+
+
+        
       <!-- NAV BANNER-->
-      <?php require_once('pages/navbanner.php'); ?>
-        <hr>
+        <?php require_once('subPages/navBanner.php'); ?> 
+  
+    
+      <hr>
+     
 
     <!-- Programming-->
     <p class="pageHeader">Programming</p>
@@ -42,7 +52,7 @@
     </div>
 
             <!-- Footer -->
-        <?php require_once('pages/footer.php'); ?>
+        <?php require_once('subPages/footer.php'); ?>
             <hr>
 
     </body>

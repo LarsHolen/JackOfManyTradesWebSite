@@ -10,6 +10,8 @@ if(!session_id()) session_start();
 
 
 
+
+
 $conn = mysqli_connect($host,$username,$password,$dbname);
 
 if (mysqli_connect_errno())
@@ -19,10 +21,12 @@ if (mysqli_connect_errno())
 
 
 // Finds how many entries
-$lengthSQL = "SELECT COUNT(*) AS total FROM	blog_table WHERE page='3d'";
+$lengthSQL = "SELECT COUNT(*) AS total FROM	blog_table WHERE page='programming'";
 
 $lengthQuery = mysqli_query($conn, $lengthSQL);
 $lengthBlog = mysqli_fetch_assoc($lengthQuery);
+
+   
 
 
 
@@ -51,11 +55,24 @@ if($_SESSION['page'] != $_SERVER["SCRIPT_FILENAME"]  )
 }
 
 
+
+
+
+
+
+
 //$sql = "SELECT * FROM blog_table";
-$sql = "SELECT * FROM blog_table WHERE page='3d' ORDER BY date DESC LIMIT $i,1 ";
+$sql = "SELECT * FROM blog_table WHERE page='programming' ORDER BY date DESC LIMIT $i,1 ";
 
 $query = mysqli_query($conn, $sql);
 
+/*
+foreach($query as $q){
+    echo '<div style="position: relative; left:50%;transform:translate(-50%,0);width:300px;">
+    <img style="height:300px;width:300;border-radius:5px;box-shadow: 0 1px 5px 0 rgba(179, 179, 179, 0.884),0 10px 10px 0 rgba(0,0,0,0.19);" src="' . $q['imageLink'] . '">
+    <p style="color: #fff" >' . $q['text'] . '</p><p style="color: #fff">Date: ' . $q['date'] . ' </p></div>';
+}
+*/
 
     foreach($query as $q){
         if($q['imageLink'] == "")
@@ -65,9 +82,15 @@ $query = mysqli_query($conn, $sql);
             '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Date: ' . $q['date'] . ' </p></div>';
         } else
         {
+            
             echo '<div style="position: relative; left:50%;transform:translate(-50%,0);width:100%;">
-            <img style="max_height:80vh;margin:auto;Display:grid;height:80%;border-radius:5px;box-shadow: 0 1px 5px 0 rgba(179, 179, 179, 0.884),0 10px 10px 0 rgba(0,0,0,0.19);" src="' . $q['imageLink'] . '">
+            <img style="object-fit: scale-down;margin:auto;Display:grid;border-radius:5px;box-shadow: 0 1px 5px 0 rgba(179, 179, 179, 0.884),0 10px 10px 0 rgba(0,0,0,0.19);" src="' . $q['imageLink'] . '">
             <p style="color: #fff;text-align:center" >' . $q['text'] . '</p><p style="color: #fff;text-align:center">Post: ' . $i+1 . '/' . $lengthBlog['total'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Date: ' . $q['date'] . ' </p></div>';
+            /*
+            echo '<div style="position: relative; left:50%;transform:translate(-50%,0);width:70%;">
+            <img style="max_height:80vh;margin:auto;Display:grid;border-radius:5px;box-shadow: 0 1px 5px 0 rgba(179, 179, 179, 0.884),0 10px 10px 0 rgba(0,0,0,0.19);" src="' . $q['imageLink'] . '">
+            <p style="color: #fff;text-align:center" >' . $q['text'] . '</p><p style="color: #fff;text-align:center">Post: ' . $i+1 . '/' . $lengthBlog['total'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Date: ' . $q['date'] . ' </p></div>';
+            */
         }
     }
 ?>

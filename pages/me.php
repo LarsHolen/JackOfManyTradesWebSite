@@ -21,7 +21,7 @@
 
     <body>
       <!-- NAV BANNER-->
-      <?php require_once('../pages/navbanner.php'); ?>
+      <?php require_once('../subPages/navBanner.php'); ?>
         <hr>
 
     <!-- About me-->
@@ -34,15 +34,15 @@
 
     <div class="list place-items-center">
         <button class="nav_button">
-            <a class="aref boxShadow" href="subPages\AddIndex.php">&nbsp;&nbsp;Flip Backwards&nbsp;&nbsp;</a>
+            <a class="aref boxShadow" href="..\subPages\AddIndex.php">&nbsp;&nbsp;Flip Backwards&nbsp;&nbsp;</a>
         </button> 
         <button class="nav_button boxShadow">
-            <a class="aref" href="subPages\SubIndex.php">&nbsp;&nbsp;Flip Forward&nbsp;&nbsp;</a>
+            <a class="aref" href="..\subPages\SubIndex.php">&nbsp;&nbsp;Flip Forward&nbsp;&nbsp;</a>
         </button> 
     </div>
 
             <!-- Footer -->
-        <?php require_once('../pages/footer.php'); ?>
+        <?php require_once('../subPages/footer.php'); ?>
             <hr>
 
     </body>

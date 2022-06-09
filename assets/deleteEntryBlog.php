@@ -1,10 +1,6 @@
 <?php
-
- header('Content-type: text/html; charset=ISO-8859-15');
- 
 require "../config.php";
 require "../common.php";
-
 
 $conn = mysqli_connect($host,$username,$password,$dbname);
 
@@ -13,11 +9,18 @@ if (mysqli_connect_errno())
     die("Connection Error: " . mysqli_connect_error());
 } 
 
-$sql = "SELECT * FROM blog_table";
 
-$query = mysqli_query($conn, $sql);
 
-foreach($query as $q){
-    echo json_encode($q);
+$id = $_POST["id"];
+
+$sql = "DELETE FROM blog_table WHERE id = $id";
+
+if (mysqli_query($conn, $sql)) {
+echo "Record deleted";
+} else {
+echo "Error deleting entry: " . mysqli_error($conn);
 }
+
+mysqli_close($conn);
+
 ?>
